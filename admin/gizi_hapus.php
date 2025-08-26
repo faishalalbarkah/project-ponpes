@@ -1,0 +1,1 @@
+<?php require_once(__DIR__ . '/../config/db.php'); $id=intval($_GET['id']??0); $conn->query("DELETE FROM kandungan_gizi WHERE id=$id"); header('Location: gizi.php'); 

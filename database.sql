@@ -1,0 +1,29 @@
+
+-- Buat database: CREATE DATABASE ponpes_db CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+-- Gunakan:      USE ponpes_db;
+
+CREATE TABLE IF NOT EXISTS menu_makanan (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  hari ENUM('Senin','Selasa','Rabu','Kamis','Jumat','Sabtu','Minggu') NOT NULL,
+  makan_pagi VARCHAR(255) NOT NULL,
+  makan_siang VARCHAR(255) NOT NULL,
+  makan_malam VARCHAR(255) NOT NULL,
+  ekstra VARCHAR(255) NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE IF NOT EXISTS kandungan_gizi (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  hari ENUM('Senin','Selasa','Rabu','Kamis','Jumat','Sabtu','Minggu') NOT NULL,
+  makan_pagi TEXT NOT NULL,
+  makan_siang TEXT NOT NULL,
+  makan_malam TEXT NOT NULL,
+  ekstra TEXT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE IF NOT EXISTS link_sosmed (
+  id INT AUTO_INCREMENT PRIMARY KEY,
+  nama VARCHAR(50) NOT NULL,
+  logo VARCHAR(255) NULL,
+  url VARCHAR(255) NOT NULL,
+  status TINYINT(1) DEFAULT 1
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
