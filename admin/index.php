@@ -26,10 +26,10 @@
     <a class="btn" href="gizi.php">Kelola Analisa Gizi</a>
     <a class="btn" href="link.php">Kelola Link Sosmed</a>
   </div>
-  <p class="notice">Sederhana & tanpa login untuk demo. Tambahkan autentikasi bila diperlukan.</p>
+ 
 </div>
 
   </div>
-  <div class="footer">© 2025 Ponpes — PHP Native CRUD</div>
+  <div class="footer">© 2025 Ponpes</div>
 </body>
 </html>

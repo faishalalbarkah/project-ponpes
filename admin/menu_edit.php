@@ -19,7 +19,10 @@
   </div>
   <div class="container">
 
-<?php $id = intval($_GET['id'] ?? 0); $data = $conn->query("SELECT * FROM menu_makanan WHERE id=$id")->fetch_assoc(); ?>
+<?php 
+$id   = intval($_GET['id'] ?? 0); 
+$data = $conn->query("SELECT * FROM menu_makanan WHERE id=$id")->fetch_assoc(); 
+?>
 <div class="card">
   <h2 style="margin-top:0;">Edit — Menu Makanan</h2>
   <form method="post">
@@ -33,19 +36,19 @@
       </div>
       <div>
         <label>Makan Pagi</label>
-        <input type="text" name="makan_pagi" class="input" value="<?php echo htmlspecialchars($data['makan_pagi'] ?? ''); ?>" required>
+        <textarea name="makan_pagi" class="input" required><?php echo htmlspecialchars($data['makan_pagi'] ?? ''); ?></textarea>
       </div>
       <div>
         <label>Makan Siang</label>
-        <input type="text" name="makan_siang" class="input" value="<?php echo htmlspecialchars($data['makan_siang'] ?? ''); ?>" required>
+        <textarea name="makan_siang" class="input" required><?php echo htmlspecialchars($data['makan_siang'] ?? ''); ?></textarea>
       </div>
       <div>
         <label>Makan Malam</label>
-        <input type="text" name="makan_malam" class="input" value="<?php echo htmlspecialchars($data['makan_malam'] ?? ''); ?>" required>
+        <textarea name="makan_malam" class="input" required><?php echo htmlspecialchars($data['makan_malam'] ?? ''); ?></textarea>
       </div>
       <div>
         <label>Ekstra</label>
-        <input type="text" name="ekstra" class="input" value="<?php echo htmlspecialchars($data['ekstra'] ?? ''); ?>">
+        <textarea name="ekstra" class="input"><?php echo htmlspecialchars($data['ekstra'] ?? ''); ?></textarea>
       </div>
     
     </div>
@@ -53,18 +56,40 @@
     <button class="btn" type="submit">Update</button>
     <a class="btn secondary" href="menu.php">Batal</a>
   </form>
+
   <?php
     if ($_SERVER['REQUEST_METHOD']==='POST') {
-      $hari = $_POST['hari']; $pagi=$_POST['makan_pagi']; $siang=$_POST['makan_siang']; $malam=$_POST['makan_malam']; $ekstra=$_POST['ekstra'];
-      $stmt = $conn->prepare("UPDATE menu_makanan SET hari=?, makan_pagi=?, makan_siang=?, makan_malam=?, ekstra=? WHERE id=?");
-      $stmt->bind_param('sssssi',$hari,$pagi,$siang,$malam,$ekstra,$id);
-      if ($stmt->execute()) echo "<p class='badge success'>Tersimpan!</p>";
-      echo "<script>location.href='menu.php';</script>";
+      $hari  = $_POST['hari']; 
+      $pagi  = $_POST['makan_pagi']; 
+      $siang = $_POST['makan_siang']; 
+      $malam = $_POST['makan_malam']; 
+      $ekstra= $_POST['ekstra'];
+
+      // Validasi: cek apakah hari sudah ada di record lain
+      $check = $conn->prepare("SELECT COUNT(*) FROM menu_makanan WHERE hari=? AND id<>?");
+      $check->bind_param("si", $hari, $id);
+      $check->execute();
+      $check->bind_result($count);
+      $check->fetch();
+      $check->close();
+
+      if ($count > 0) {
+        echo "<p class='badge error'>Hari <b>$hari</b> sudah ada, silakan pilih hari lain!</p>";
+      } else {
+        $stmt = $conn->prepare("UPDATE menu_makanan SET hari=?, makan_pagi=?, makan_siang=?, makan_malam=?, ekstra=? WHERE id=?");
+        $stmt->bind_param('sssssi',$hari,$pagi,$siang,$malam,$ekstra,$id);
+        if ($stmt->execute()) {
+          echo "<p class='badge success'>Tersimpan!</p>";
+          echo "<script>location.href='menu.php';</script>";
+        } else {
+          echo "<p class='badge error'>Gagal menyimpan data!</p>";
+        }
+      }
     }
   ?>
 </div>
 
   </div>
-  <div class="footer">© 2025 Ponpes — PHP Native CRUD</div>
+  <div class="footer">© 2025 Ponpes </div>
 </body>
 </html>

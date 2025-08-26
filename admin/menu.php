@@ -53,6 +53,6 @@
 </div>
 
   </div>
-  <div class="footer">© 2025 Ponpes — PHP Native CRUD</div>
+  <div class="footer">© 2025 Ponpes </div>
 </body>
 </html>
