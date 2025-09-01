@@ -1,4 +1,11 @@
 <?php require_once(__DIR__ . '/../config/db.php'); ?>
+<?php
+session_start();
+if (!isset($_SESSION['user_id'])) {
+  header("Location: login.php?error=Silakan login dulu");
+  exit;
+}
+?>
 <!doctype html>
 <html lang="id">
 
@@ -65,7 +72,7 @@
         $malam = $_POST['makan_malam'];
         $ekstra = $_POST['ekstra'];
 
-        // 🔍 Validasi: cek apakah hari sudah dipakai di record lain
+        // Validasi: cek apakah hari sudah dipakai di record lain
         $check = $conn->prepare("SELECT COUNT(*) FROM kandungan_gizi WHERE hari=? AND id<>?");
         $check->bind_param("si", $hari, $id);
         $check->execute();

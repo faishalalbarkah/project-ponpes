@@ -1,4 +1,11 @@
 <?php require_once(__DIR__ . '/../config/db.php'); ?>
+<?php
+session_start();
+if (!isset($_SESSION['user_id'])) {
+  header("Location: login.php?error=Silakan login dulu");
+  exit;
+}
+?>
 <!doctype html>
 <html lang="id">
 

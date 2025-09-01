@@ -1,4 +1,11 @@
 <?php require_once(__DIR__ . '/../config/db.php'); ?>
+<?php
+session_start();
+if (!isset($_SESSION['user_id'])) {
+  header("Location: login.php?error=Silakan login dulu");
+  exit;
+}
+?>
 <!doctype html>
 <html lang="id">
 <head>
@@ -34,7 +41,7 @@
         echo '<tr>';
         echo '<td>'.htmlspecialchars($row['nama']).'</td>';
         $logo = htmlspecialchars($row['logo']);
-        $path = '../assets/images/uploads/'.basename($logo);
+        $path = '../assets/images/'.basename($logo);
         echo '<td>' . ($logo ? '<img src="'.$path.'" style="width:40px;height:40px;object-fit:contain;">' : '-') . '</td>';
         echo '<td><a href="'.htmlspecialchars($row['url']).'" target="_blank">'.htmlspecialchars($row['url']).'</a></td>';
         echo '<td>'.($row['status'] ? '<span class="badge success">Aktif</span>' : '<span class="badge muted">Nonaktif</span>').'</td>';

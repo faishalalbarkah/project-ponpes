@@ -1,4 +1,11 @@
 <?php require_once(__DIR__ . '/../config/db.php'); ?>
+<?php
+session_start();
+if (!isset($_SESSION['user_id'])) {
+  header("Location: login.php?error=Silakan login dulu");
+  exit;
+}
+?>
 <!doctype html>
 <html lang="id">
 <head>
@@ -46,7 +53,7 @@
         $allowed = ['png','jpg','jpeg','gif','webp'];
         if (in_array(strtolower($ext), $allowed) && $_FILES['logo']['size'] <= 1024*1024) {
           $logoName = time().'_'.preg_replace('/[^a-zA-Z0-9_.-]/','',$_FILES['logo']['name']);
-          move_uploaded_file($_FILES['logo']['tmp_name'], __DIR__.'/../assets/images/uploads/'.$logoName);
+          move_uploaded_file($_FILES['logo']['tmp_name'], __DIR__.'/../assets/images/'.$logoName);
         }
       }
       $stmt = $conn->prepare("UPDATE link_sosmed SET nama=?, logo=?, url=?, status=? WHERE id=?");
