@@ -1,0 +1,225 @@
+
+	body{
+		padding: 0;
+		margin: 0;
+		 font-family: 'Poppins', sans-serif;
+	}
+	.publish_date {
+		border: 8px solid #ffffff;
+		background: #059605;
+		color: #ffffff;
+	}
+	.wp-block-search.wp-block-search__button-inside .wp-block-search__inside-wrapper,
+	.wp-block-search.wp-block-search__no-button .wp-block-search__inside-wrapper,
+	.wp-block-search.wp-block-search__button-outside .wp-block-search__inside-wrapper .wp-block-search__input {
+		border: 1px solid #059605;
+	}
+	.wp-block-tag-cloud a {
+		color: #ffffff;
+		background: #059605;
+	}
+	.share i {
+		border: 8px solid #ffffff;
+	}
+	.mad__top {
+		background: #222222;
+		color: #ffffff;
+	}
+	.mad__top a {
+		color: #ffffff;
+	}
+	.head_time,
+    .head_phone,
+    .head_mail,
+	.mad__nav .newnav .accordion li a span {
+	    background: #222222;
+		color: #ffffff;
+    }
+	
+	.mad_ticker {
+        background: #115511;
+		color: #ffffff;
+		min-height: auto;
+		line-height: normal;
+		padding: 0;
+		align-items: center;
+		justify-content: center;
+    }
+	.mad_ticker a {
+		color: #88cc00;
+    }
+	.runscroll{
+		display: flex;
+		align-items: center;
+		overflow: hidden;
+	}
+	.scrollin{
+		display: inline-block;
+		padding: 0 10 px;
+	}
+
+	.sekilas,
+	.mad_today {
+		background: #059605;
+		color: #ffffff;
+		display: flex;
+		height: auto;
+		padding: 5px 10px;
+		align-items: center;
+		justify-content: center;
+	}
+	
+	
+    /* CSS Social Media */
+	.mad__sos .icofont-x,
+	.mad__sos .icofont-tiktok {
+		background: #000000;
+	}
+	.mad__sos .icon-mad-facebook {
+		background: #1877f2;
+	}
+	.mad__sos .icon-mad-instagram {
+		background: #e4405f;
+	}
+	.mad__sos .icon-mad-youtube {
+		background: #efb100;
+	}
+	.mad__sos .icon-mad-mail {
+		background: #d93025;
+	}
+	.mad__sos .icon-mad-whatsapp {
+		background: #25d366;
+	}
+	
+
+	/* .press_content {
+		background: #333333;
+	} */
+
+	 /* Header sejajar */
+	 .mad__header{
+		height: 136px;
+	 }
+
+    .mad__header{
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	height: 136px;
+	z-index: 110;
+	box-shadow: rgba(0, 0, 0, 0.2) 0px 0px 15px;
+	background-color: #fff;
+ }
+
+ .mad__flex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo di kiri */
+.mad__logo {
+  flex-shrink: 0;
+}
+
+/* Menu utama di kanan */
+#site-header-menu {
+  flex-grow: 1;
+  margin-left: 20px;
+}
+
+#site-header-menu .newul {
+  list-style: none;
+  display: flex;      /* hanya menu utama yang flex */
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+#site-header-menu .newul > li {
+  position: relative; /* untuk posisi submenu */
+  height: auto !important;
+  min-height: unset !important;
+  align-items: center !important;
+    padding: 0;
+  margin: 0;
+}
+
+/* Link menu utama */
+#site-header-menu .newul > li > a {
+  background: #ffffff;
+  color: #000000;
+  padding: 2px 6px;         /* kecilkan ruang dalam */
+  line-height: 1;
+   font-size: 14px;
+  display: inline-flex;
+  align-items: center;      /* icon + teks rata tengah vertikal */
+  border-radius: 6px;
+  height: auto;             /* jangan fix height */
+}
+#site-header-menu .newul > li > a i {
+  font-size: 12px;  /* kecilkan kalau terlalu tinggi */
+  line-height: 1;
+  margin-right: 4px;
+  vertical-align: middle;
+}
+.mad__flex {
+    align-items: flex-start; /* bukan center */
+}
+.mad__header {
+    height: auto !important; /* jangan fix 136px */
+    padding: 0;              /* hapus padding atas-bawah */
+}
+
+
+/* --- Submenu --- */
+#site-header-menu .sub-menu {
+  display: none;             /* sembunyi dulu */
+  position: absolute;
+  top: 100%;                 /* muncul di bawah menu utama */
+  left: 0;
+  background: #fff;
+  list-style: none;
+  margin: 0;
+  padding: 10px 0;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  z-index: 999;
+}
+
+#site-header-menu .sub-menu li {
+  width: 200px;
+}
+
+#site-header-menu .sub-menu li a {
+  padding: 8px 15px;
+  color: #333;
+  display: block;
+  
+}
+
+#site-header-menu .sub-menu li a:hover {
+  background: #f2f2f2;
+}
+
+/* Biar submenu muncul hanya saat hover */
+#site-header-menu .newul > li:hover > .sub-menu {
+  display: block;
+}
+
+   
+
+.copyright{
+	padding: 40px 0;
+	text-align: center;
+}
+.footer{
+	background-color: #115511;
+	color: #fff;
+	    position: relative;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+	box-sizing: border-box;
+}
