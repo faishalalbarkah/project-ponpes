@@ -1,6 +1,7 @@
-
--- Buat database: CREATE DATABASE ponpes_db CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
--- Gunakan:      USE ponpes_db;
+-- Buat database: 
+CREATE DATABASE ponpes_db CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
+-- Gunakan database: 
+USE ponpes_db;
 
 CREATE TABLE IF NOT EXISTS menu_makanan (
   id INT AUTO_INCREMENT PRIMARY KEY,
@@ -37,3 +38,10 @@ CREATE TABLE IF NOT EXISTS users (
   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
   updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- ✅ Tambahkan user administrator default
+INSERT INTO users (username, email, password, status) VALUES
+('admin', 'admin@ponpes.local', 
+ -- password = admin123 (di-hash dengan bcrypt)
+ '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', 
+ 1);

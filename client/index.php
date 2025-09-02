@@ -50,42 +50,29 @@
 
 		.share {
 			display: flex;
-			gap: 10px;
+			flex-direction: column;
+			align-items: center;
+			gap: 15px;
 			/* jarak antar icon */
 		}
 
-		.share-card {
-			width: 50px;
-			height: 50px;
-			background: #f3f3f3;
-			/* warna background card */
-			border-radius: 50%;
-			/* bulat */
+		.share a {
 			display: flex;
 			align-items: center;
 			justify-content: center;
+			width: 70px;
+			height: 70px;
+			border-radius: 50%;
+			background: white;
+			box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+			transition: transform 0.2s;
 			text-decoration: none;
-			box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
-			/* efek shadow */
-			transition: 0.3s ease;
 		}
 
-		.share-card img {
-			width: 24px;
-			height: 24px;
+		.share a img {
+			width: 40px;
+			height: 40px;
 			object-fit: contain;
-		}
-
-		.share-card:hover {
-			background: #059605;
-			/* hijau saat hover */
-			transform: scale(1.1);
-			/* efek membesar */
-		}
-
-		.share-card:hover img {
-			filter: brightness(0) invert(1);
-			/* icon jadi putih di hover */
 		}
 	</style>
 
@@ -169,15 +156,13 @@
 								$logo = htmlspecialchars($row['logo']); // nama file logo
 								$path = '../assets/images/' . basename($logo); // path logo
 							?>
-								<a href="<?= htmlspecialchars($row['url']) ?>" target="_blank" class="share-card">
+								<a href="<?= htmlspecialchars($row['url']) ?>" target="_blank">
 									<img src="<?= $path ?>" alt="social-icon">
 								</a>
 							<?php
 							}
 							?>
 						</div>
-
-
 
 					</div>
 
