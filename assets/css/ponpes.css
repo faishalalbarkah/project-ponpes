@@ -37,7 +37,7 @@
     }
 	
 	.mad_ticker {
-        background: #115511;
+        background: #59c659;
 		color: #ffffff;
 		min-height: auto;
 		line-height: normal;
@@ -46,7 +46,7 @@
 		justify-content: center;
     }
 	.mad_ticker a {
-		color: #88cc00;
+		color: #d93025;
     }
 	.runscroll{
 		display: flex;
@@ -150,7 +150,7 @@
 /* Link menu utama */
 #site-header-menu .newul > li > a {
   background: #ffffff;
-  color: #000000;
+  color: #59c659;
   padding: 2px 6px;         /* kecilkan ruang dalam */
   line-height: 1;
    font-size: 14px;
