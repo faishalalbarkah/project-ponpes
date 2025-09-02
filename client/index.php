@@ -47,6 +47,46 @@
 			background: #f3f4f6;
 			font-weight: 700;
 		}
+
+		.share {
+			display: flex;
+			gap: 10px;
+			/* jarak antar icon */
+		}
+
+		.share-card {
+			width: 50px;
+			height: 50px;
+			background: #f3f3f3;
+			/* warna background card */
+			border-radius: 50%;
+			/* bulat */
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			text-decoration: none;
+			box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+			/* efek shadow */
+			transition: 0.3s ease;
+		}
+
+		.share-card img {
+			width: 24px;
+			height: 24px;
+			object-fit: contain;
+		}
+
+		.share-card:hover {
+			background: #059605;
+			/* hijau saat hover */
+			transform: scale(1.1);
+			/* efek membesar */
+		}
+
+		.share-card:hover img {
+			filter: brightness(0) invert(1);
+			/* icon jadi putih di hover */
+		}
 	</style>
 
 	<title>Makanan Dapur di pondok pesantren - Pondok Pesantren Assyifa Sagalaherang Subang</title>
@@ -122,20 +162,22 @@
 
 						<!-- Icon dan share Sosmednya -->
 						<div class="share">
-							<i class="icon-mad-share"></i>
-							<a href="" target="_blank" title="Share to Facebook">
-								<i class="icon-mad-facebook"></i>
-							</a>
-							<a href="" target="_blank" title="Share to Twitter">
-								<i class="icofont-x"></i>
-							</a>
-							<a target="_blank" href="" title="Share to WhatsApp">
-								<i class="icon-mad-whatsapp"></i>
-							</a>
-							<a href="" target="_blank" title="Share to Telegram">
-								<i class="icon-mad-telegram"></i>
-							</a>
+							<?php
+							$res = $conn->query("SELECT * FROM link_sosmed WHERE status = 1");
+
+							while ($row = $res->fetch_assoc()) {
+								$logo = htmlspecialchars($row['logo']); // nama file logo
+								$path = '../assets/images/' . basename($logo); // path logo
+							?>
+								<a href="<?= htmlspecialchars($row['url']) ?>" target="_blank" class="share-card">
+									<img src="<?= $path ?>" alt="social-icon">
+								</a>
+							<?php
+							}
+							?>
 						</div>
+
+
 
 					</div>
 
