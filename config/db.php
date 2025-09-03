@@ -3,7 +3,7 @@
 $host = 'localhost';
 $user = 'root';
 $pass = '';
-$db   = 'ponpes_db';
+$db   = 'ponpesmaster_db';
 
 $conn = new mysqli($host, $user, $pass, $db);
 if ($conn->connect_error) {

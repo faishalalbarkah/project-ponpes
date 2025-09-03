@@ -50,6 +50,7 @@
 
 		.share {
 			display: flex;
+			flex-direction: column; /* membuat item menurun */
 			gap: 10px;
 			/* jarak antar icon */
 		}
@@ -58,9 +59,6 @@
 			width: 50px;
 			height: 50px;
 			background: #f3f3f3;
-			/* warna background card */
-			border-radius: 50%;
-			/* bulat */
 			display: flex;
 			align-items: center;
 			justify-content: center;
@@ -68,24 +66,27 @@
 			box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
 			/* efek shadow */
 			transition: 0.3s ease;
+			border-radius: 50%;
+			/* bulat */
 		}
 
 		.share-card img {
-			width: 24px;
-			height: 24px;
+			width: 80%;
+			height: 80%;
 			object-fit: contain;
+			transition: all 0.3s ease;
 		}
 
 		.share-card:hover {
-			background: #059605;
-			/* hijau saat hover */
-			transform: scale(1.1);
+		background: #059605;
+		    /* hijau saat hover */
+		transform: scale(1.1);
 			/* efek membesar */
 		}
 
 		.share-card:hover img {
-			filter: brightness(0) invert(1);
-			/* icon jadi putih di hover */
+		 filter: none; /* hapus invert */
+         opacity: 0.8; /* opsional, efek hover */
 		}
 	</style>
 
