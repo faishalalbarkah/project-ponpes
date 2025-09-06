@@ -11,6 +11,8 @@
 	<link rel="stylesheet" href="../assets/css/ponpes.css">
 	<link rel="stylesheet" href="../assets/css/madding.css">
 	<link rel="stylesheet" href="../assets/css/splide.css">
+	 <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+</head>
 	<style>
 		.nav-link {
 			text-decoration: none;
@@ -73,6 +75,19 @@
 			width: 40px;
 			height: 40px;
 			object-fit: contain;
+		}
+		.custom-row {
+		display: flex;
+		gap: 15px;       
+		}
+		.custom-col {
+		flex: 0 0 50%;   
+		}
+		.custom-col img { 
+		width: 100%;     
+		height: auto;
+		border-radius: 12px;
+		box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 		}
 	</style>
 
@@ -172,9 +187,16 @@
 							<i class="icon-mad-heart-half"></i>
 						</div>
 
-						<div class="mading_featured">
-							<img width="960" height="1280" src="https://assyifasagalaherang.ponpes.id/wp-content/uploads/2023/09/photo_2023-09-04_06-12-15.jpg" class="attachment-full size-full wp-post-image" alt="" decoding="async" srcset="https://assyifasagalaherang.ponpes.id/wp-content/uploads/2023/09/photo_2023-09-04_06-12-15.jpg 960w, https://assyifasagalaherang.ponpes.id/wp-content/uploads/2023/09/photo_2023-09-04_06-12-15-225x300.jpg 225w, https://assyifasagalaherang.ponpes.id/wp-content/uploads/2023/09/photo_2023-09-04_06-12-15-768x1024.jpg 768w, https://assyifasagalaherang.ponpes.id/wp-content/uploads/2023/09/photo_2023-09-04_06-12-15-300x400.jpg 300w, https://assyifasagalaherang.ponpes.id/wp-content/uploads/2023/09/photo_2023-09-04_06-12-15-110x147.jpg 110w" sizes="(max-width: 960px) 100vw, 960px" />
-						</div>
+
+<div class="custom-row">
+  <div class="custom-col">
+    <img src="../assets/images/pondok1.jpg" alt="Mading 1">
+  </div>
+  <div class="custom-col">
+    <img src="../assets/images/pondok2.jpg" alt="Mading 2">
+  </div>
+</div>
+
 
 						<div class="card">
 							<div style="display:flex;justify-content:space-between;align-items:center;">
