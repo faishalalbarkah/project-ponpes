@@ -102,7 +102,7 @@
 				<div class="ext__container">
 					<div class="mad__flex">
 						<div class="mad__logo">
-							<a href="" class="custom-logo-link" rel="home"><img width="600" height="165" src="https://assyifasagalaherang.ponpes.id/wp-content/uploads/2025/06/cropped-pondok-scaled-1.png" class="custom-logo" alt="Pondok Pesantren Assyifa Sagalaherang Subang" decoding="async" srcset="https://assyifasagalaherang.ponpes.id/wp-content/uploads/2025/06/cropped-pondok-scaled-1.png 600w, https://assyifasagalaherang.ponpes.id/wp-content/uploads/2025/06/cropped-pondok-scaled-1-300x83.png 300w" sizes="(max-width: 600px) 100vw, 600px" /></a>
+							<a href="" class="custom-logo-link" rel="home"><img width="600" height="165" src="../assets/images/syahida.jpg" class="custom-logo" alt="Pondok Pesantren Assyifa Sagalaherang Subang" decoding="async" sizes="(max-width: 600px) 100vw, 600px" /></a>
 						</div>
 						<div id="site-header-menu" class="site-header-menu">
 							<div class="newnav nav-desktop nav-mobile">
@@ -128,11 +128,11 @@
 				<div class="runscroll">
 					<div class="scroll text4">
 						<ul class="scrollin my-news-ticker">
-							<li>Ahlan Wa Sahlan di Web Ponpes As-Syifa Sagalaherang|| Info PMB Ponpes Assyifa Sagalaherang<a href="http://bit.ly/PMB-Assyifa" class="nav-link"> Klik Disini</a>
+							<li>Ahlan Wa Sahlan di Web Ponpes Syahida || Info PMB Ponpes Syahida <a href="http://bit.ly/PMB-Assyifa" class="nav-link"> Klik Disini</a>
 							</li>
 						</ul>
 						<ul class="scrollin my-news-ticker">
-							<li>Ahlan Wa Sahlan di Web Ponpes As-Syifa Sagalaherang|| Info PMB Ponpes Assyifa Sagalaherang<a href="http://bit.ly/PMB-Assyifa" class="nav-link"> Klik Disini</a>
+							<li>Ahlan Wa Sahlan di Web Ponpes Syahida || Info PMB Ponpes Syahida <a href="http://bit.ly/PMB-Assyifa" class="nav-link"> Klik Disini</a>
 							</li>
 						</ul>
 					</div>
@@ -239,7 +239,7 @@
 
 		<div class="footer">
 			<div class="copyright">
-				Ponpes As-Syifa Sagalaherang
+				Ponpes Syahida
 			</div>
 		</div>
 
